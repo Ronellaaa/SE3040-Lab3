@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>JavaScript Promise</h2>
+    <p id="demo"></p>
+    <script>
+      function myMarksDisplayer(marks) {
+        document.getElementById("demo").innerHTML = marks;
+      }
+
+      let myPromise = new Promise(function (resolve, reject) {
+        let marks = 75;
+
+        if (marks >= 50) {
+          resolve(`Congratulations! You passed with ${marks} marks.`);
+        } else {
+          reject(`Sorry! You failed with ${marks} marks.`);
+        }
+      })
+        .then(myMarksDisplayer)
+        .catch(myMarksDisplayer);
+    </script>
+  </body>
+</html>
